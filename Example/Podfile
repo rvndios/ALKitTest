@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'ALKit_Example' do
-  pod 'ALKit', :path => '../'
+    pod 'ALKit', :path => '../'
 
   target 'ALKit_Tests' do
     inherit! :search_paths

@@ -1,9 +1,9 @@
 {
   "name": "ALKit",
   "version": "0.1.0",
-  "summary": "A short description of ALKit.",
+  "summary": "ALKit -  Login with your Address account to access your adddress in any where",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/rvndios/ALKit",
+  "homepage": "https://github.com/rvndios/ALKitTest.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "rvndios": "aravind@flocksmedia.com"
   },
   "source": {
-    "git": "https://github.com/rvndios/ALKit.git",
+    "git": "https://github.com/rvndios/ALKitTest.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ALKit/Classes/**/*"
+  "source_files": "ALKit/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+      "~> 4.6"
+    ]
+  }
 }
