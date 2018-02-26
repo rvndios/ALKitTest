@@ -1,0 +1,22 @@
+{
+  "name": "ALKit",
+  "version": "0.1.0",
+  "summary": "A short description of ALKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/rvndios/ALKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "rvndios": "aravind@flocksmedia.com"
+  },
+  "source": {
+    "git": "https://github.com/rvndios/ALKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ALKit/Classes/**/*"
+}
