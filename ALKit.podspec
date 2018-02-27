@@ -33,10 +33,10 @@ TODO: Add long description of the pod here.
   s.source_files = 'ALKit/Classes/**/*'
   
   # s.resource_bundles = {
-  #   'ALKit' => ['ALKit/Assets/*.png']
+  #   'ALKit' => ['ASAlert/**/*.{storyboard,xib}']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-    s.dependency 'Alamofire', '~> 4.6'
+#  s.dependency 'Alamofire', '~> 4.6'
 end

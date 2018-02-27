@@ -18,10 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ALKit/Classes/**/*",
-  "dependencies": {
-    "Alamofire": [
-      "~> 4.6"
-    ]
-  }
+  "source_files": "ALKit/Classes/**/*"
 }

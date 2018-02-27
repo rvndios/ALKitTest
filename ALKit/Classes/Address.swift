@@ -7,11 +7,10 @@
 
 import UIKit
 
-class Address: NSObject
+ open class Address: NSObject
 {
-    @objc dynamic var key : String? = ""
-    @objc dynamic var error : NSError? = nil
-     @objc dynamic var UserName : String? = ""
-     @objc dynamic var userID : String? = ""
-    
+    open var key : String? = ""
+    open var error : NSError? = nil
+     open var zip : String? = ""
+     open var userID : String? = ""
 }

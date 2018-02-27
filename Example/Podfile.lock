@@ -1,7 +1,5 @@
 PODS:
-  - Alamofire (4.6.0)
-  - ALKit (0.1.0):
-    - Alamofire (~> 4.6)
+  - ALKit (0.1.0)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -17,8 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  ALKit: b124ab7e1e595d36a25de7f0eb7aae4eac9b15a9
+  ALKit: ab63a06bd19eeb5e0bdb64acdbb17f6ba289114a
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
 
 PODFILE CHECKSUM: e8530a4d8d88b243c5de2016c99e2c6f539a3546

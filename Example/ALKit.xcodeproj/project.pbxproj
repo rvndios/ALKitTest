@@ -356,12 +356,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ALKit_Example/Pods-ALKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ALKit/ALKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
