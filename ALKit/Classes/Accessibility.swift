@@ -1,5 +1,5 @@
 //
-//  ALUserManager.swift
+//  Accessibility.swift
 //  ALKit
 //
 //  Created by Aravind on 28/02/18.

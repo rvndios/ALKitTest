@@ -7,17 +7,22 @@ PODS:
     - FBSnapshotTestCase/Core
 
 DEPENDENCIES:
-  - ALKit (from `../`)
+  - ALKit (from `https://github.com/rvndios/ALKitTest.git`)
   - FBSnapshotTestCase (~> 2.1.4)
 
 EXTERNAL SOURCES:
   ALKit:
-    :path: ../
+    :git: https://github.com/rvndios/ALKitTest.git
+
+CHECKOUT OPTIONS:
+  ALKit:
+    :commit: a4c0dc2cd2758f8cf4c58eb715aaf9be208bde80
+    :git: https://github.com/rvndios/ALKitTest.git
 
 SPEC CHECKSUMS:
   ALKit: ab63a06bd19eeb5e0bdb64acdbb17f6ba289114a
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
 
-PODFILE CHECKSUM: e8530a4d8d88b243c5de2016c99e2c6f539a3546
+PODFILE CHECKSUM: 23233ad9d020faa9720f0905c214af7fbd33c078
 
 COCOAPODS: 1.3.1

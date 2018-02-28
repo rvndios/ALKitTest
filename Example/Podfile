@@ -1,9 +1,8 @@
 use_frameworks!
 
 target 'ALKit_Example' do
-    #pod 'ALKit', :path => '../'
-    pod 'ALKit', :git => 'https://github.com/rvndios/ALKitTest.git'#, :tag => '0.1.0'
-
+    pod 'ALKit', :path => '../'
+    #pod 'ALKit', :git => 'https://github.com/rvndios/ALKitTest.git'#, :tag => '0.1.0'
 
   target 'ALKit_Tests' do
     inherit! :search_paths
