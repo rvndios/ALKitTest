@@ -15,7 +15,7 @@ public class ALKitView: UIViewController {
     @IBOutlet weak var btnResend: UIBarButtonItem!
     var flag = true {
         didSet {
-            btnResend.isEnabled = !flag
+             btnResend.isEnabled = !flag
             if flag {
                 self.changeText(forObject: lblTitle, text: "Enter registered Email/ Mobile no to login")
                 self.changeText(forObject: txtName, text: "Enter here...")
@@ -29,7 +29,7 @@ public class ALKitView: UIViewController {
                 txtName.text = ""
                 self.btnLogin.isEnabled = true
             } } }
-    
+
     var completionHandler: ((_ childVC: ALKitView) -> Void)?
     weak open var delegate: ALKitDelegate?
     weak open var titleColor: UIColor?
@@ -52,7 +52,7 @@ public class ALKitView: UIViewController {
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtotp: UITextField!
-    
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         activity.stopAnimating()
@@ -65,19 +65,19 @@ public class ALKitView: UIViewController {
     }
     
     override public var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-    
+
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.table.isHidden = true
-        flag = true
+         flag = true
     }
     
     @IBAction func onCancel(_ sender: Any) {self.dismiss(animated: true, completion: nil)  }
-    
+
     @IBAction func begin(_ sender: Any) {
         let btn = sender as! UIButton
         if btn.title(for: .normal) == "Send OTP"//Anim
-        {
+            {
             flag = false
         } else {
             flag = true
@@ -89,7 +89,7 @@ public class ALKitView: UIViewController {
                  self.delegate?.didALKitFailedWithError(Error: Err)
                  print(Err)
                  })*/
-                
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0)
                 {
                     // self.gameOver(NSDictionary())
@@ -121,7 +121,7 @@ extension ALKitView
             obj.setTitle(text, for: .normal)
         }
     }
-    
+
     fileprivate func makeAddress(_ dict: NSDictionary) -> Address
     {
         let address = Address()
@@ -145,29 +145,29 @@ extension ALKitView: UITableViewDataSource, UITableViewDelegate
         dict.setValue("sdfehuy67efjkhfiuyhrjk8786jkniufr", forKey: "key")
         dict.setValue("Lexy Pandera", forKey: "name")
         dict.setValue("568265", forKey: "zip")
-        dict.setValue("AD45V", forKey: "id")
+         dict.setValue("AD45V", forKey: "id")
         
         self.txtName.text = ""
         self.view.endEditing(true)
         self.lblTitle.text = "Select address"
         self.addressList = [dict, dict, dict,dict, dict, dict,dict, dict, dict]
-        
+
         /*ALWebManager.sharedInstance.getAllAddressForUser(userID: " ", onSuccess: { (dict) in
-         self.addressList = dict["code"] as! Array<NSDictionary>
-         }) { (Err) in
-         self.delegate?.didALKitFailedWithError(Error: Err as NSError)
-         }*/
+            self.addressList = dict["code"] as! Array<NSDictionary>
+        }) { (Err) in
+            self.delegate?.didALKitFailedWithError(Error: Err as NSError)
+        }*/
     }
-    
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return addressList.count }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.dismiss(animated: true) { self.delegate?.didSelectAddress(addresss: self.makeAddress(self.addressList[indexPath.row])) } }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         cell.textLabel?.text = self.addressList[indexPath.row].value(forKey: "name") as! String
         cell.detailTextLabel?.text = self.addressList[indexPath.row].value(forKey: "id") as! String
         return cell
     }
-    
+
 }

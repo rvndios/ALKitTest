@@ -43,13 +43,13 @@ extension  AddressManager
 {
     @available(*, deprecated: 10.0, message: "ALLoginManager is not supported on below iOS 10.0")
     public static var shared: AddressManager =
-    {
-        if let id = Bundle.main.object(forInfoDictionaryKey: ADDRESS_APPID) { } else {
-            fatalError(APPID_MISSING)
-        }
-        return AddressManager(alAppid: Bundle.main.object(forInfoDictionaryKey: ADDRESS_APPID)! as! String)
+        {
+            if let id = Bundle.main.object(forInfoDictionaryKey: ADDRESS_APPID) { } else {
+                fatalError(APPID_MISSING)
+            }
+            return AddressManager(alAppid: Bundle.main.object(forInfoDictionaryKey: ADDRESS_APPID)! as! String)
     }()
-    
+
     public convenience init(alAppid: String, style: ALStyleType) {
         self.init()
         self.alAppid = alAppid
@@ -95,23 +95,23 @@ extension AddressManager
         loginKit.statusBarColor = statusBarColor
         loginKit.modalPresentationStyle = .overFullScreen
     }
-    
+  
 }
 
 extension AddressManager {
-    
+
     public func saveUserTocken(_ tocken: String)
     {
         let kcw = ALUserManager.init(serviceName: "AddressCode")
         kcw.set(tocken, forKey: "alUserTocken")
     }
-    
+
     public func getUserTocken() -> String
     {
         let kcw = ALUserManager.init(serviceName: "AddressCode")
         return kcw.string(forKey: "alUserTocken")!
     }
-    
+
     public func debugFatalError(_ message: String) {
         #if DEBUG
             fatalError(message)
@@ -120,6 +120,5 @@ extension AddressManager {
         #endif
     }
 }
-
 
 

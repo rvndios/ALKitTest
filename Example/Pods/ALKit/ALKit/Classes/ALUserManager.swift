@@ -1,4 +1,3 @@
-
 //
 //  ALUserManager.swift
 //  ALKit
@@ -446,4 +445,3 @@ extension ALUserManager{
         #endif
     }
 }
-

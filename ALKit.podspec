@@ -28,12 +28,12 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/rvndios/ALKitTest.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'ALKit/Classes/**/*'
   
    s.resource_bundles = {
-     'ALKit' => ['ASAlert/**/*.{storyboard,xib}']
+     'ALKit' => ['ALKit/**/*.{storyboard,xib}']
    }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

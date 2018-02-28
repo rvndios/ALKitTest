@@ -79,7 +79,6 @@ public enum KeychainItemAccessibility {
                 return key
             }
         }
-        
         return nil
     }
 }
@@ -103,4 +102,3 @@ extension KeychainItemAccessibility : KeychainAttrRepresentable {
         return keychainItemAccessibilityLookup[self]!
     }
 }
-

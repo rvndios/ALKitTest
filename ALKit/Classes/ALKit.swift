@@ -141,7 +141,7 @@ extension ALKitView: UITableViewDataSource, UITableViewDelegate
     fileprivate func beginGame()
     {
         //#
-        var dict = NSMutableDictionary()
+        let dict = NSMutableDictionary()
         dict.setValue("sdfehuy67efjkhfiuyhrjk8786jkniufr", forKey: "key")
         dict.setValue("Lexy Pandera", forKey: "name")
         dict.setValue("568265", forKey: "zip")

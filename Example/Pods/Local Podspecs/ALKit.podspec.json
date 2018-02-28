@@ -1,6 +1,6 @@
 {
   "name": "ALKit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "ALKit -  Login with your Address account to access your adddress in any where",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/rvndios/ALKitTest.git",
@@ -13,10 +13,15 @@
   },
   "source": {
     "git": "https://github.com/rvndios/ALKitTest.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ALKit/Classes/**/*"
+  "source_files": "ALKit/Classes/**/*",
+  "resource_bundles": {
+    "ALKit": [
+      "ALKit/**/*.{storyboard,xib}"
+    ]
+  }
 }
