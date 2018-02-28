@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ALKit'
-  s.version          = '1.0.0'
+  s.version          = '1.0'
   s.summary          = 'ALKit -  Login with your Address account to access your adddress in any where'
 
 # This description is used to generate tags and improve search results.
