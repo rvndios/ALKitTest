@@ -14,12 +14,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
     @objc @IBAction func login()
     {
-       // let mgr = ALLoginManager(appID: "appidvalue435")
-        let manager = ALLoginManager.shared
+        let manager = AddressManager.shared
         manager.delegate = self
+        manager.backGroundColor = UIColor.red
+        manager.titleColor = UIColor.black
+        manager.navigationBarColor = UIColor.blue
         manager.logIn(viewController: self)
     }
 
