@@ -9,11 +9,39 @@ import Foundation
 
 public typealias Parameters = [String: Any]
 public typealias HTTPHeaders = [String: String]
+enum Errors: Int {
+    case appIDNotFound = -1
+    case timeout = -2
+    case invalidState = -3
+    case notFound = 404
+    case unknown
+    
+    init(value: Int) {
+        if let error = Errors(rawValue: value) {
+            self = error
+        } else {
+            self = .unknown
+        }
+    }
+}
 
 class ALWebManager
 {
     private let baseURL = "https://address.co"
     static let sharedInstance = ALWebManager()
+    
+    public func verifyLogin(mailID: String, onSuccess: @escaping([String: Any]) -> Void, onFailure: @escaping(Error) -> Void)
+    {
+        let url = baseURL + "/verifylogin"
+        let method = "POST"
+        let header = addTockenHeaders(token: "token")
+        let parameter : Parameters? = ["tocken" : mailID as Any]
+        
+        self.performTask(strURL: url, method: method, headers: header, parameters: parameter, onSuccess: { (dict) in
+            
+        }) { (Err) in
+        }
+    }
     
     public func performSendOtp(mailID: String, onSuccess: @escaping([String: Any]) -> Void, onFailure: @escaping(Error) -> Void)
     {
@@ -36,7 +64,7 @@ class ALWebManager
         let parameter : Parameters? = ["otp" : otp as Any]
         
         self.performTask(strURL: url, method: method, headers: header, parameters: parameter, onSuccess: { (dict) in
-            
+            ALUserManager.standard.saveUserTocken(dict["key"]! as! String)
         }) { (Err) in
             
         }
@@ -73,7 +101,6 @@ class ALWebManager
 
 extension ALWebManager{
     public func performTask(strURL: String, method: String,headers: HTTPHeaders? = nil, parameters: Parameters? = nil, onSuccess: @escaping([String: Any]) -> Void, onFailure: @escaping(Error) -> Void)
-        
     {
         let url: String = baseURL //strURL
         let request: NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)

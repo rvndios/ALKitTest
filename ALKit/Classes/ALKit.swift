@@ -9,9 +9,13 @@ import UIKit
 
 typealias ALCompletionBlock = (_ address: Address, _ error: NSError) -> Void
 
+
+
 public class ALKitView: UIViewController {
+    @IBOutlet weak var btnResend: UIBarButtonItem!
     var flag = true {
         didSet {
+             btnResend.isEnabled = !flag
             if flag {
                 self.changeText(forObject: lblTitle, text: "Enter registered Email/ Mobile no to login")
                 self.changeText(forObject: txtName, text: "Enter here...")
@@ -28,6 +32,9 @@ public class ALKitView: UIViewController {
 
     var completionHandler: ((_ childVC: ALKitView) -> Void)?
     weak open var delegate: ALKitDelegate?
+    weak open var titleColor: UIColor?
+    weak open var topColor: UIColor?
+    weak open var statusBarColor: UIColor?
     var mailID: String!
     var otp: String!
     @IBOutlet weak var lblTitle: UILabel!
@@ -42,6 +49,7 @@ public class ALKitView: UIViewController {
     }
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtotp: UITextField!
 
@@ -55,9 +63,13 @@ public class ALKitView: UIViewController {
         super.viewWillAppear(true)
         flag = true
     }
+    
+    override public var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        self.table.isHidden = true
+         flag = true
     }
     
     @IBAction func onCancel(_ sender: Any) {self.dismiss(animated: true, completion: nil)  }
@@ -135,6 +147,9 @@ extension ALKitView: UITableViewDataSource, UITableViewDelegate
         dict.setValue("568265", forKey: "zip")
          dict.setValue("AD45V", forKey: "id")
         
+        self.txtName.text = ""
+        self.view.endEditing(true)
+        self.lblTitle.text = "Select address"
         self.addressList = [dict, dict, dict,dict, dict, dict,dict, dict, dict]
 
         /*ALWebManager.sharedInstance.getAllAddressForUser(userID: " ", onSuccess: { (dict) in
