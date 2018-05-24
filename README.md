@@ -22,7 +22,7 @@ pod 'ALKit'
 
 ## Author
 
-rvndios, aravind@flocksmedia.com
+rvndios, aravindscs@gmail.com
 
 ## License
 
